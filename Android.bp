@@ -1,4 +1,4 @@
-cc_library_static {
+cc_library {
     name: "libtinyxml2",
     host_supported: true,
 
@@ -14,5 +14,6 @@ cc_library_static {
         },
     },
 
+    shared_libs: ["liblog"],
     export_include_dirs: ["."],
 }
