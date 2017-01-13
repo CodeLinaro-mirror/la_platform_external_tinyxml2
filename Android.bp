@@ -11,6 +11,9 @@ cc_library {
                 "-DDEBUG",
                 "-DANDROID_NDK",
             ],
+            shared: {
+              shared_libs: ["liblog"],
+            },
         },
     },
 
