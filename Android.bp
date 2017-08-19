@@ -2,8 +2,13 @@ cc_library {
     name: "libtinyxml2",
     host_supported: true,
     vendor_available: true,
+    vndk: {
+        enabled: true,
+    },
 
     srcs: ["tinyxml2.cpp"],
+
+    shared_libs: ["liblog"],
 
     target: {
         android: {
@@ -12,12 +17,8 @@ cc_library {
                 "-DDEBUG",
                 "-DANDROID_NDK",
             ],
-            shared: {
-              shared_libs: ["liblog"],
-            },
         },
     },
 
-    shared_libs: ["liblog"],
     export_include_dirs: ["."],
 }
